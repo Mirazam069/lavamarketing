@@ -135,7 +135,7 @@
     align-items: flex-end;
     gap: 14px;
     width: max-content;
-    margin-top: -36px;
+    margin-top: -72px;
     animation: portfolio-marquee 30s linear infinite;
     will-change: transform;
   }

@@ -122,7 +122,9 @@ function ServicesStack() {
 
         gsap.set(stackCards, {
           left: '50%',
+          top: '50%',
           xPercent: -50,
+          yPercent: -50,
           y: 0,
           autoAlpha: 0,
           zIndex: (index) => index + 1,
@@ -159,7 +161,7 @@ function ServicesStack() {
           })
         })
 
-        tl.to({}, { duration: 0.9 })
+        tl.to({}, { duration: 0.25 })
       })
 
       return () => mm.revert()
@@ -180,7 +182,10 @@ function ServicesStack() {
         <div className="services-stack__wrapper">
           {cards.map((card) => {
             return (
-              <article className={`services-stack__card ${card.className}`} key={card.number}>
+              <article
+                className={`services-stack__card ${card.className}`}
+                key={card.number}
+              >
               <div className="services-stack__content">
                 <h2 className="services-stack__number">{card.number}</h2>
                 <h3 className="services-stack__title">{card.title}</h3>
@@ -212,7 +217,10 @@ function ServicesStack() {
               </div>
 
               {card.number === '06' && (
-                <aside className="services-stack__note" aria-label="Loyihalar ro'yxati">
+                <aside
+                  className="services-stack__note services-stack__note--desktop"
+                  aria-label="Loyihalar ro'yxati"
+                >
                   <p className="services-stack__note-title">50+ loyihalar</p>
                   <span className="services-stack__note-divider" aria-hidden="true" />
 
@@ -237,6 +245,27 @@ function ServicesStack() {
             )
           })}
         </div>
+
+        <aside className="services-stack__note services-stack__note--mobile" aria-label="Loyihalar ro'yxati">
+          <p className="services-stack__note-title">50+ loyihalar</p>
+          <span className="services-stack__note-divider" aria-hidden="true" />
+
+          <div className="services-stack__note-list">
+            {cardSixNotePrimary.map((item) => (
+              <span className="services-stack__note-item" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="services-stack__note-list">
+            {cardSixNoteSecondary.map((item) => (
+              <span className="services-stack__note-item" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </aside>
       </div>
     </section>
   )
