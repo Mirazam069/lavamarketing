@@ -74,13 +74,30 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
   color: var(--text-color);
   font-family: var(--font-body);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image: url('./images/banner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  transform: translateZ(0);
+}
+
+@media (max-width: 900px) {
+  body::before {
+    background-position: center top;
+    background-size: cover;
+  }
 }
 
 h1,

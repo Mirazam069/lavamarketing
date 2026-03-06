@@ -1,7 +1,7 @@
 .floating-aside {
   position: fixed;
   right: max(0px, calc((100vw - 1440px) / 2));
-  bottom: clamp(16px, 4vh, 36px);
+  bottom: clamp(28px, 6vh, 54px);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -18,7 +18,26 @@
   background: color-mix(in srgb, var(--bg-dark) 76%, transparent);
   color: var(--text);
   text-decoration: none;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: floating-aside-item-in 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.floating-aside__item:nth-child(1) {
+  animation-delay: 2.08s;
+}
+
+.floating-aside__item:nth-child(2) {
+  animation-delay: 2.3s;
+}
+
+.floating-aside__item:nth-child(3) {
+  animation-delay: 2.52s;
+}
+
+.floating-aside__item:nth-child(4) {
+  animation-delay: 2.74s;
 }
 
 .floating-aside__item:hover {
@@ -32,11 +51,22 @@
   fill: currentColor;
 }
 
+@keyframes floating-aside-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 760px) {
   .floating-aside {
     right: 12px;
     top: auto;
-    bottom: 14px;
+    bottom: 28px;
     z-index: 140;
   }
 
@@ -48,5 +78,13 @@
   .floating-aside__item svg {
     width: 22px;
     height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-aside__item {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }

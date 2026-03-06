@@ -30,7 +30,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0.65rem 0;
+  padding: 20px 0;
   background: none;
 }
 
@@ -122,8 +122,8 @@
   }
 
   .hero-navbar {
-    padding-top: 0.55rem;
-    padding-bottom: 0.55rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .hero-navbar__brand-logo {
@@ -148,8 +148,8 @@
   .hero-navbar {
     padding-left: 12px;
     padding-right: 12px;
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .hero-navbar__brand {

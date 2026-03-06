@@ -135,6 +135,7 @@
     align-items: flex-end;
     gap: 14px;
     width: max-content;
+    margin-top: -36px;
     animation: portfolio-marquee 30s linear infinite;
     will-change: transform;
   }
@@ -146,9 +147,7 @@
   .portfolio-showcase__marquee-item img {
     display: block;
     width: clamp(220px, 70vw, 300px);
-    height: clamp(86px, 27.5vw, 118px);
-    object-fit: cover;
-    object-position: center;
+    height: auto;
     border-radius: 0;
     box-shadow: 0 30px 80px var(--portfolio-shadow);
     filter: grayscale(100%);

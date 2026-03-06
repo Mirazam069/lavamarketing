@@ -245,6 +245,7 @@
     max-width: 520px;
     height: auto;
     min-height: 280px;
+    padding: 20px;
   }
 
   .services-stack__content {
