@@ -119,7 +119,47 @@ function ServicesStack() {
 
       mm.add('(max-width: 900px)', () => {
         const stackCards = gsap.utils.toArray('.services-stack__card')
-        gsap.set(stackCards, { clearProps: 'all' })
+
+        gsap.set(stackCards, {
+          left: '50%',
+          xPercent: -50,
+          y: 0,
+          autoAlpha: 0,
+          zIndex: (index) => index + 1,
+        })
+
+        gsap.set(stackCards[0], {
+          x: 0,
+          autoAlpha: 1,
+          zIndex: 1,
+        })
+
+        gsap.set(stackCards.slice(1), {
+          x: () => -Math.min(window.innerWidth * 0.72, 300),
+          autoAlpha: 0,
+        })
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        })
+
+        stackCards.slice(1).forEach((card, index) => {
+          tl.to(card, {
+            x: 0,
+            autoAlpha: 1,
+            zIndex: index + 2,
+            ease: 'none',
+            duration: 1,
+          })
+        })
+
+        tl.to({}, { duration: 0.9 })
       })
 
       return () => mm.revert()

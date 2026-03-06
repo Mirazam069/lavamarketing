@@ -223,28 +223,32 @@
 
 @media (max-width: 900px) {
   .services-stack {
-    height: auto;
+    height: calc(var(--stack-height, 400vh) + 120vh);
     overflow: visible;
+    padding-bottom: 220px;
   }
 
   .services-stack__container {
-    height: auto;
+    height: 100%;
+    padding: 10px 14px 8px;
   }
 
   .services-stack__wrapper {
-    position: static;
-    height: auto;
-    display: grid;
-    gap: 24px;
-    justify-items: center;
+    position: sticky;
+    top: 88px;
+    height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .services-stack__card {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
+    position: absolute;
+    top: 0;
+    width: min(520px, calc(100vw - 28px));
+    max-width: min(520px, calc(100vw - 28px));
     height: auto;
-    min-height: 280px;
+    min-height: 300px;
     padding: 20px;
   }
 
@@ -259,7 +263,7 @@
 
   .services-stack__visual {
     margin-top: 12px;
-    height: clamp(130px, 42vw, 200px);
+    height: clamp(130px, 40vw, 190px);
   }
 
   .services-stack__note {
