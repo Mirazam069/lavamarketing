@@ -131,7 +131,7 @@
   }
 
   .portfolio-showcase__track {
-    display: flex;
+    display: none;
     align-items: flex-end;
     gap: 14px;
     width: max-content;
