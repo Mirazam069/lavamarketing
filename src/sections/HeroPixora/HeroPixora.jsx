@@ -1,12 +1,31 @@
+import { useEffect, useRef } from 'react'
 import './HeroPixora.css'
 
 function HeroPixora({ onOpenAudit }) {
+  const sectionRef = useRef(null)
   const bodyLine1 = 'Ko\u2018p bizneslarda muammo reklamada emas.'
   const bodyLine2 =
     'Muammo \u2014 lidni sotuvga aylantiradigan tizim yo\u2018qligi: admin javob beradi, lekin sotuvlar o\u2019smaydi!'
 
+  useEffect(() => {
+    const applyStaticMobileHeight = () => {
+      if (!sectionRef.current) {
+        return
+      }
+
+      sectionRef.current.style.setProperty('--hero-mobile-static-height', `${window.innerHeight}px`)
+    }
+
+    applyStaticMobileHeight()
+    window.addEventListener('orientationchange', applyStaticMobileHeight)
+
+    return () => {
+      window.removeEventListener('orientationchange', applyStaticMobileHeight)
+    }
+  }, [])
+
   return (
-    <section id="hero-pixora" className="hero-pixora" aria-label="Hero Pixora">
+    <section id="hero-pixora" className="hero-pixora" aria-label="Hero Pixora" ref={sectionRef}>
       <div className="hero-pixora__shell">
         <div className="hero-pixora__content">
           <h1 className="hero-pixora__title">

@@ -191,7 +191,7 @@
   }
 
   .hero-pixora__shell {
-    min-height: calc(100svh - 72px);
+    min-height: calc(var(--hero-mobile-static-height, 100lvh) - 72px);
     align-content: start;
     gap: 1.4rem;
   }
