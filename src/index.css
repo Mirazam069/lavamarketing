@@ -86,7 +86,23 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url('./images/banner.png');
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      color-mix(in srgb, var(--fire-color) 80%, transparent) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      circle at 86% 14%,
+      color-mix(in srgb, var(--fire-color) 62%, transparent) 0%,
+      transparent 58%
+    ),
+    linear-gradient(
+      156deg,
+      color-mix(in srgb, var(--fire-color) 54%, var(--button-color) 46%) 0%,
+      color-mix(in srgb, var(--fire-color) 76%, var(--button-color) 24%) 46%,
+      color-mix(in srgb, var(--button-color) 84%, var(--fire-color) 16%) 100%
+    );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
