@@ -1,0 +1,193 @@
+.services-list-section {
+  --services-text: var(--button-color);
+  --services-muted: color-mix(in srgb, var(--button-color) 66%, transparent);
+  --services-stroke: var(
+    --stroke,
+    color-mix(in srgb, var(--button-color) 22%, transparent)
+  );
+  --services-icon: var(--button-color);
+  width: 100%;
+  background: var(--text, var(--text-color));
+}
+
+.services__container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 120px) 40px clamp(72px, 9vw, 120px);
+}
+
+.services-list-section__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(20px, 5vw, 72px);
+}
+
+.services-list-section__intro {
+  position: sticky;
+  top: 110px;
+}
+
+.services-list-section__eyebrow {
+  margin: 0;
+  color: var(--services-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.services-list-section__title {
+  margin: 10px 0 0;
+  color: var(--services-text);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.services-list-section__lead {
+  margin: 14px 0 0;
+  max-width: 28ch;
+  color: var(--services-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.services-list-section__rail {
+  display: grid;
+  gap: 18px;
+}
+
+.services-list-section__card {
+  position: relative;
+  min-height: 128px;
+  display: grid;
+  gap: 16px;
+  padding: 18px 18px 18px 18px;
+  border: 1px solid var(--services-stroke);
+  background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--button-color) 3%, var(--text, var(--text-color))) 0%,
+      var(--text, var(--text-color)) 100%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--button-color) 8%, transparent) 0,
+      transparent 50%
+    );
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.services-list-section__card--offset {
+  transform: translateX(clamp(0px, 4vw, 48px));
+}
+
+.services-list-section__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--services-text);
+  box-shadow: 0 20px 44px color-mix(in srgb, var(--button-color) 15%, transparent);
+}
+
+.services-list-section__card--offset:hover {
+  transform: translateX(clamp(0px, 4vw, 48px)) translateY(-6px);
+}
+
+.services-list-section__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.services-list-section__index {
+  color: var(--services-muted);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.services-list-section__divider {
+  height: 1px;
+  flex: 1;
+  background: color-mix(in srgb, var(--button-color) 16%, transparent);
+}
+
+.services-list-section__body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.services-list-section__icon-wrap {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--button-color) 22%, transparent);
+  background: color-mix(in srgb, var(--button-color) 3%, var(--text, var(--text-color)));
+}
+
+.services-list-section__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--services-icon);
+}
+
+.services-list-section__text {
+  margin: 0;
+  color: var(--services-text);
+  font-size: clamp(1.03rem, 1.3vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+@media (max-width: 1200px) {
+  .services-list-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-list-section__intro {
+    position: static;
+  }
+
+  .services-list-section__card--offset {
+    transform: translateX(0);
+  }
+
+  .services-list-section__card--offset:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 700px) {
+  .services__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .services-list-section__title {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .services-list-section__card {
+    min-height: 92px;
+    padding: 18px 14px 14px;
+    gap: 14px;
+  }
+
+  .services-list-section__icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .services-list-section__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-list-section__text {
+    font-size: 1rem;
+  }
+}

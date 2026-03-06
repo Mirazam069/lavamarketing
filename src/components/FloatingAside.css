@@ -1,0 +1,52 @@
+.floating-aside {
+  position: fixed;
+  right: max(0px, calc((100vw - 1440px) / 2));
+  bottom: clamp(16px, 4vh, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 60;
+}
+
+.floating-aside__item {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text);
+  background: color-mix(in srgb, var(--bg-dark) 76%, transparent);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.floating-aside__item:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.floating-aside__item svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@media (max-width: 760px) {
+  .floating-aside {
+    right: 12px;
+    top: auto;
+    bottom: 14px;
+    z-index: 140;
+  }
+
+  .floating-aside__item {
+    width: 42px;
+    height: 42px;
+  }
+
+  .floating-aside__item svg {
+    width: 22px;
+    height: 22px;
+  }
+}

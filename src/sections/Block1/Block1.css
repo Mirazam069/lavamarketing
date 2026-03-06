@@ -1,0 +1,90 @@
+.block1 {
+  --block-text: var(--text, var(--text-color));
+  --block-muted: var(--muted, var(--text-color));
+  --block-accent: var(--accent, var(--button-color));
+  --block-bg: var(--bg, transparent);
+  --block-surface: var(--nav-surface, var(--surface, color-mix(in srgb, var(--text-color) 10%, transparent)));
+  --block-stroke: var(--stroke, color-mix(in srgb, var(--text-color) 24%, transparent));
+  --block-radius: var(--radius, 1.25rem);
+
+  width: 100%;
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 2rem);
+  background: transparent;
+}
+
+.block1__container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  text-align: left;
+}
+
+.block1__badge {
+  width: fit-content;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: var(--block-accent);
+  color: var(--block-text);
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.8vw, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.block1__title {
+  margin: 0;
+  max-width: 22ch;
+  color: var(--block-text);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 7vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.block1__card {
+  width: min(100%, 48rem);
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+  border: 1px solid var(--block-stroke);
+  border-radius: var(--block-radius);
+  background: var(--block-surface);
+  backdrop-filter: blur(6px);
+}
+
+.block1__paragraph {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--block-muted);
+  opacity: 0.9;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.block1__subtitle {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--block-text);
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .block1__container {
+    gap: 1rem;
+  }
+
+  .block1__title {
+    max-width: 18ch;
+  }
+
+  .block1__card {
+    width: 100%;
+  }
+}

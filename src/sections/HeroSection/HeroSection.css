@@ -1,0 +1,122 @@
+.hero-section {
+  --hero-bg: var(--bg-dark, var(--bg, var(--button-color)));
+  --hero-text: var(--text, var(--text-color));
+  --hero-muted: var(--muted, var(--text, var(--text-color)));
+
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--hero-bg);
+}
+
+.hero-section__container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px 40px 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-section__title {
+  margin: 30px 0 0;
+  color: var(--hero-text);
+  font-size: clamp(60px, 8vw, 130px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.hero-section__break-mobile {
+  display: none;
+}
+
+.hero-section__gap-desktop {
+  display: inline;
+}
+
+.hero-section__arrow-image {
+  justify-self: end;
+  align-self: center;
+  width: min(100%, 640px);
+  height: auto;
+  display: block;
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: auto;
+  }
+
+  .hero-section__container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 24px 20px 20px;
+    gap: 1.4rem;
+    align-items: start;
+  }
+
+  .hero-section__title {
+    font-size: clamp(38px, 10vw, 62px);
+    letter-spacing: -1px;
+    line-height: 0.92;
+  }
+
+  .hero-section__arrow-image {
+    justify-self: start;
+    width: min(100%, 520px);
+    margin-top: 8px;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section__container {
+    min-height: auto;
+    padding: 18px 14px 16px;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .hero-section__title {
+    font-size: clamp(30px, 10.4vw, 46px);
+    letter-spacing: -0.7px;
+    line-height: 0.94;
+  }
+
+  .hero-section__break-mobile {
+    display: block;
+  }
+
+  .hero-section__gap-desktop {
+    display: none;
+  }
+
+  .hero-section__arrow-image {
+    width: 100%;
+    max-width: 380px;
+    margin-top: 6px;
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-section__container {
+    padding: 14px 12px 14px;
+  }
+
+  .hero-section__title {
+    font-size: clamp(26px, 10.2vw, 38px);
+    line-height: 0.96;
+  }
+
+  .hero-section__arrow-image {
+    max-width: 320px;
+  }
+}

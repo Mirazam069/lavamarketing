@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=DM+Sans:wght@400;500;700&family=Edu+NSW+ACT+Hand:wght@400..700&display=swap');
+
+:root {
+  --milky-white: #F2E9D6;
+  --fire-color: #851400;
+  --text-color: var(--milky-white);
+  --button-color: #1C1C1C;
+  --text: var(--text-color);
+  --muted: color-mix(in srgb, var(--text-color) 74%, transparent);
+  --bg-dark: var(--button-color);
+  --stroke: color-mix(in srgb, var(--text-color) 28%, transparent);
+  --accent1: color-mix(in srgb, var(--button-color) 72%, var(--text-color));
+  --accent2: color-mix(in srgb, var(--button-color) 80%, var(--text-color));
+  --accent3: color-mix(in srgb, var(--button-color) 65%, var(--text-color));
+  --accent4: color-mix(in srgb, var(--button-color) 88%, var(--text-color));
+  --font-heading: 'Anton SC', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-handwrite: 'Edu NSW ACT Hand', 'Edu NSW ACT Hand Cursive', cursive;
+
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: transparent;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--button-color);
+  color: var(--text-color);
+}
+
+::-moz-selection {
+  background: var(--button-color);
+  color: var(--text-color);
+}
+
+html {
+  scrollbar-color: var(--fire-color) var(--button-color);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--button-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fire-color);
+  border: 2px solid var(--button-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--fire-color) 86%, var(--text-color));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-color);
+  font-family: var(--font-body);
+  background-image: url('./images/banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+p,
+span,
+small,
+label,
+li,
+a,
+button,
+input,
+textarea {
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid #2d2d2d;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--button-color);
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
